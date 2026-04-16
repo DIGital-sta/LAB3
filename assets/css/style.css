@@ -1,3 +1,9 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -21,13 +27,45 @@ body {
 .section {
     padding: 100px 0;
 }
+#products {
+    background-image: linear-gradient(rgba(30, 30, 30, 0.9), rgba(26, 26, 26, 0.9)),
+        url('../../images/back3.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+#gallery {
+    background-image: linear-gradient(rgba(30, 30, 30, 0.9), rgba(26, 26, 26, 0.9)),
+            url('../../images/back3.png');
+    
+  
+}
+
+
+#about {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('../../images/back3.png');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+   
+}
+
+
+.recommended {
+    background-image: linear-gradient(rgba(30, 30, 30, 0.9), rgba(26, 26, 26, 0.9)),
+            url('../../images/back3.png');
+    
+    
+}
 
 .section-title {
     text-align: center;
     margin-bottom: 50px;
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 700;
-    letter-spacing: 1px;
 }
 
 .btn {
@@ -37,16 +75,10 @@ body {
     padding: 12px 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-align: center;
     border-radius: 20px;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 14px;
-}
-
-.btn.small {
-    padding: 8px 18px;
-    font-size: 12px;
 }
 
 .btn:hover {
@@ -55,17 +87,36 @@ body {
     box-shadow: 0 5px 15px rgba(139, 58, 43, 0.4);
 }
 
-/* Header & Nav */
+.btn.small {
+    padding: 8px 18px;
+    font-size: 12px;
+}
+
+
 .header {
     width: 100%;
     height: 100vh;
-    min-height: 600px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../../images/backg.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../images/backg.png');
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
+}
+
+
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+
+    background: rgba(26, 26, 26, 0.4);
+    backdrop-filter: blur(5px);
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+   
+    transition: background 0.3s ease;
 }
 
 .nav {
@@ -75,10 +126,17 @@ body {
     padding: 30px 0;
 }
 
+.logo {
+    position: relative;
+    z-index: 2100;
+    
+}
+
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
+    list-style: none;
 }
 
 .nav-menu a {
@@ -92,37 +150,48 @@ body {
     color: #8b3a2b;
 }
 
-/* Burger Menu Styles */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
 .burger {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
     cursor: pointer;
-    z-index: 1001;
+    
+    position: relative;
+    z-index: 2100;
 }
 
 .burger span {
     display: block;
-    width: 30px;
+    width: 100%;
     height: 3px;
-    background: white;
-    transition: 0.3s;
+    background-color: white;
+    border-radius: 10px;
+    transition: 0.3s ease;
 }
+
 
 .hero {
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 56px;
+    font-size: 3.5rem;
     line-height: 1.2;
     text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.7);
 }
+
 
 .category-buttons {
     display: flex;
@@ -131,8 +200,7 @@ body {
     gap: 15px;
 }
 
-/* Grid для товарів */
-.products {
+.products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
@@ -140,66 +208,34 @@ body {
 
 .card {
     background: #252525;
-    border: 1px solid #333;
     border-radius: 15px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: all 0.4s ease;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    border-color: #8b3a2b;
+    transition: 0.4s;
 }
 
 .card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    order: 2;
+    order: 1;
 }
 
 .card-info {
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
     text-align: center;
+    order: 2;
 }
 
-.card-info p {
-    order: 1;
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.card-info span {
-    order: 3;
-    font-size: 20px;
+.card-info .price {
+    display: block;
+    font-size: 1.25rem;
     color: #8b3a2b;
     font-weight: bold;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
-.card .btn {
-    order: 4;
-    align-self: center;
-}
-
-/* Sections Backgrounds */
-.discount,
-.about,
-.footer {
-    text-align: center;
-    padding: 80px 0;
-    background-size: cover;
-    background-position: center;
-}
-
-.discount {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-        url('../../images/maybe back.png');
-}
 
 .gallery-grid {
     display: grid;
@@ -212,31 +248,42 @@ body {
     height: 300px;
     border-radius: 15px;
     object-fit: cover;
-    transition: 0.4s;
 }
 
+
 .footer {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-        url('../../images/maybe back.png');
+    padding: 80px 0;
+    background: #111;
     border-top: 1px solid #333;
 }
 
 .footer-grid {
     display: flex;
     justify-content: space-between;
-    text-align: left;
 }
 
-/* Адаптивність (оновлено) */
-@media (max-width: 992px) {
 
-    .products,
-    .gallery-grid {
+.discount,
+.about {
+    text-align: center;
+    padding: 80px 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.discount {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../../images/maybe back.png');
+}
+
+
+
+@media (max-width: 992px) {
+    .products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .hero h1 {
-        font-size: 40px;
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -249,22 +296,26 @@ body {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
+        width: 100%;
+        
         height: 100vh;
         background: #1a1a1a;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        
         transition: 0.5s;
-        z-index: 1000;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        z-index: 2050;
+        
     }
 
     .nav-menu.active {
         right: 0;
     }
 
+   
     .burger.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(8.5px) rotate(45deg);
     }
 
     .burger.active span:nth-child(2) {
@@ -272,24 +323,26 @@ body {
     }
 
     .burger.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8.5px) rotate(-45deg);
     }
 
-    .nav {
-        padding: 15px 0;
-    }
-}
-
-@media (max-width: 600px) {
-
-    .products,
-    .gallery-grid {
-        grid-template-columns: 1fr;
+    .hero h1 {
+        font-size: 2.2rem;
     }
 
     .footer-grid {
         flex-direction: column;
         gap: 40px;
         text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
     }
 }

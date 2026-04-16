@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheeses — Імператор сирів</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,15 +20,16 @@
                 <nav class="nav">
                     <div class="logo" style="font-weight: bold; font-size: 24px;">CHEESES</div>
 
-                    <div class="nav-menu" id="nav-menu">
-                        <a href="#">Home</a>
-                        <a href="#">Контакти</a>
-                        <a href="#">Зв’язок</a>
+                    <ul class="nav-menu" id="nav-menu">
+                        <li><a href="#" class="js-scroll">Home</a></li>
+                        <li><a href="#products" class="js-scroll">Товари</a></li>
+                        <li><a href="#gallery" class="js-scroll">Галерея</a></li>
+                        <li><a href="#about" class="js-scroll">Про нас</a></li>
                         <div class="hero-buttons">
                             <button class="btn">Більше</button>
                             <button class="btn">Замовити</button>
                         </div>
-                    </div>
+                    </ul>
 
                     <div class="burger" id="burger">
                         <span></span>
@@ -43,106 +45,110 @@
         </div>
     </header>
 
-    <section class="categories section">
-        <h2 class="section-title">Категорії</h2>
-        <div class="category-buttons container">
-            <button class="btn small">Напівтверді</button>
-            <button class="btn small">Витримані</button>
-            <button class="btn small">Сири з цвіллю</button>
-        </div>
+    <main>
+        <section class="categories section" id="products">
+            <div class="container">
+                <h2 class="section-title">Категорії</h2>
+                <div class="category-buttons">
+                    <button class="btn small">Напівтверді</button>
+                    <button class="btn small">Витримані</button>
+                    <button class="btn small">Сири з цвіллю</button>
+                </div>
 
-        <div class="products container">
-            <div class="card">
-                <img src="images/gauda.png" alt="Gouda" class="cheese-img">
-                <div class="card-info">
-                    <span>$40</span>
-                    <p>Гауда</p>
-                    <button class="btn small">Додати</button>
+                <div class="products-grid">
+                    <div class="card">
+                        <img src="images/gauda.png" alt="Gouda">
+                        <div class="card-info">
+                            <span class="price">$40</span>
+                            <p>Гауда</p>
+                            <button class="btn small">Додати</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/edam.png" alt="Edam">
+                        <div class="card-info">
+                            <span class="price">$40</span>
+                            <p>Едам</p>
+                            <button class="btn small">Додати</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/parmezan.png" alt="Parmesan">
+                        <div class="card-info">
+                            <span class="price">$40</span>
+                            <p>Пармезан</p>
+                            <button class="btn small">Додати</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/chedder.png" alt="Cheddar">
+                        <div class="card-info">
+                            <span class="price">$40</span>
+                            <p>Чеддер</p>
+                            <button class="btn small">Додати</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="images/edam.png" alt="Edam">
-                <div class="card-info">
-                    <span>$40</span>
-                    <p>Едам</p>
-                    <button class="btn small">Додати</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="images/parmezan.png" alt="Parmesan">
-                <div class="card-info">
-                    <span>$40</span>
-                    <p>Пармезан</p>
-                    <button class="btn small">Додати</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="images/chedder.png" alt="Cheddar">
-                <div class="card-info">
-                    <span>$40</span>
-                    <p>Чеддер</p>
-                    <button class="btn small">Додати</button>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="discount">
-        <div class="container">
-            <h2>Знижка 20% на перше замовлення</h2>
-            <button class="btn">Читати більше</button>
-        </div>
-    </section>
+        <section class="discount">
+            <div class="container">
+                <h2>Знижка 20% на перше замовлення</h2>
+                <button class="btn">Читати більше</button>
+            </div>
+        </section>
 
-    <section class="gallery section">
-        <h2 class="section-title">Більше товарів</h2>
-        <div class="gallery-grid container">
-            <img src="images/g1.jpg" alt="">
-            <img src="images/g2.jpg" alt="">
-            <img src="images/g3.jpg" alt="">
-            <img src="images/g4.jpg" alt="">
-            <img src="images/g5.jpg" alt="">
-            <img src="images/g6.jpg" alt="">
-        </div>
-    </section>
+        <section class="gallery section" id="gallery">
+            <div class="container">
+                <h2 class="section-title">Більше товарів</h2>
+                <div class="gallery-grid">
+                    <img src="images/g1.jpg" alt=""><img src="images/g2.jpg" alt=""><img src="images/g3.jpg" alt="">
+                    <img src="images/g4.jpg" alt=""><img src="images/g5.jpg" alt=""><img src="images/g6.jpg" alt="">
+                </div>
+            </div>
+        </section>
 
-    <section class="about">
-        <div class="container">
-            <h2>Про нас</h2>
-            <p>Наша мета — приносити тепло та затишок кожному.</p>
-            <button class="btn">Більше</button>
-        </div>
-    </section>
+        <section class="about" id="about">
+            <div class="container">
+                <h2>Про нас</h2>
+                <p>Наша мета — приносити тепло та затишок кожному.</p>
+                <button class="btn">Більше</button>
+            </div>
+        </section>
 
-    <section class="recommended section">
-        <h2 class="section-title">Рекомендовані продукти</h2>
-        <div class="products container">
-            <div class="card small">
-                <img src="images/c1.jpg" alt="">
-                <div class="card-info">
-                    <p>Камамбер</p>
+        <section class="recommended section">
+            <div class="container">
+                <h2 class="section-title">Рекомендовані продукти</h2>
+                <div class="products-grid">
+                    <div class="card small">
+                        <img src="images/c1.jpg" alt="">
+                        <div class="card-info">
+                            <p>Камамбер</p>
+                        </div>
+                    </div>
+                    <div class="card small">
+                        <img src="images/c2.jpg" alt="">
+                        <div class="card-info">
+                            <p>Пармезан</p>
+                        </div>
+                    </div>
+                    <div class="card small">
+                        <img src="images/c3.jpg" alt="">
+                        <div class="card-info">
+                            <p>Рокфор</p>
+                        </div>
+                    </div>
+                    <div class="card small">
+                        <img src="images/c4.jpg" alt="">
+                        <div class="card-info">
+                            <p>Горгонзола</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card small">
-                <img src="images/c2.jpg" alt="">
-                <div class="card-info">
-                    <p>Пармезан</p>
-                </div>
-            </div>
-            <div class="card small">
-                <img src="images/c3.jpg" alt="">
-                <div class="card-info">
-                    <p>Рокфор</p>
-                </div>
-            </div>
-            <div class="card small">
-                <img src="images/c4.jpg" alt="">
-                <div class="card-info">
-                    <p>Горгонзола</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container footer-grid">
@@ -151,15 +157,13 @@
                 <p>+38098389122</p>
                 <p>sales@cheeses.ua</p>
             </div>
-
             <div>
                 <h3>Навігація</h3>
-                <div class="nav-container">
+                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
                     <button class="btn">Каталог</button>
                     <button class="btn">Контакти</button>
                 </div>
             </div>
-
             <div>
                 <h3>Сирний гід</h3>
                 <p>Як обрати сир</p>
@@ -167,15 +171,7 @@
         </div>
     </footer>
 
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-    </script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
